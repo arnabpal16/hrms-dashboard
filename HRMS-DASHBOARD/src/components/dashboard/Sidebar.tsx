@@ -32,7 +32,7 @@ const Sidebar = ({ isOpen = true }: SidebarProps) => {
         isOpen ? 'w-[222px]' : 'w-0'
       }`}
     >
-      <aside className="w-[222px] min-h-screen bg-white flex flex-col">
+      <aside className="w-[222px] h-full bg-white flex flex-col">
 
       {/* Logo Section */}
       <div className="p-4 border-b border-white/10  flex flex-col items-center">
