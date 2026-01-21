@@ -10,7 +10,7 @@ const EmployeeTable = () => {
     <div className="bg-card rounded-lg border border-border p-4">
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
-        <h3 className="text-sm font-medium text-foreground">Employee Overview</h3>
+        <h3 className="text-sm font-bold text-foreground">Employee Overview</h3>
         <div className="relative">
           <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
           <input
@@ -26,13 +26,13 @@ const EmployeeTable = () => {
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b border-border">
-              <th className="text-left py-3 px-2 text-xs font-medium text-muted-foreground">Profile</th>
-              <th className="text-left py-3 px-2 text-xs font-medium text-muted-foreground">Employee Code</th>
-              <th className="text-left py-3 px-2 text-xs font-medium text-muted-foreground">Employee Name</th>
-              <th className="text-left py-3 px-2 text-xs font-medium text-muted-foreground">Department</th>
-              <th className="text-left py-3 px-2 text-xs font-medium text-muted-foreground">Designation</th>
-              <th className="text-left py-3 px-2 text-xs font-medium text-muted-foreground">Company</th>
-              <th className="text-left py-3 px-2 text-xs font-medium text-muted-foreground">Status</th>
+              <th className="text-left py-3 px-2 text-xs font-bold text-muted-foreground">Profile</th>
+              <th className="text-left py-3 px-2 text-xs font-bold text-muted-foreground">Employee Code</th>
+              <th className="text-left py-3 px-2 text-xs font-bold text-muted-foreground">Employee Name</th>
+              <th className="text-left py-3 px-2 text-xs font-bold text-muted-foreground">Department</th>
+              <th className="text-left py-3 px-2 text-xs font-bold text-muted-foreground">Designation</th>
+              <th className="text-left py-3 px-2 text-xs font-bold text-muted-foreground">Company</th>
+              <th className="text-left py-3 px-2 text-xs font-bold text-muted-foreground">Status</th>
             </tr>
           </thead>
           <tbody>
@@ -45,21 +45,23 @@ const EmployeeTable = () => {
                     className="w-8 h-8 rounded-full object-cover"
                   />
                 </td>
-                <td className="py-3 px-2 text-xs text-foreground">{employee.code}</td>
+                <td className="py-3 px-2 text-xs text-foreground ">{employee.code}</td>
                 <td className="py-3 px-2 text-xs text-foreground">{employee.name}</td>
                 <td className="py-3 px-2 text-xs text-muted-foreground">{employee.department}</td>
                 <td className="py-3 px-2 text-xs text-muted-foreground">{employee.designation}</td>
                 <td className="py-3 px-2 text-xs text-muted-foreground">{employee.company}</td>
                 <td className="py-3 px-2">
                   <span
-                    className={`px-2 py-1 rounded text-xs font-medium ${
-                      employee.status === "Permanent"
-                        ? "bg-[hsl(var(--success))]/10 text-[hsl(var(--success))]"
-                        : "bg-[hsl(var(--warning))]/10 text-[hsl(var(--warning))]"
-                    }`}
+                    className={`inline-flex items-center justify-center px-4 py-1.5 rounded-full text-sm font-medium text-white
+    ${employee.status === "Permanent"
+                        ? "bg-[#039547]"
+                        : "bg-[#F97706]"
+                      }
+  `}
                   >
                     {employee.status}
                   </span>
+
                 </td>
               </tr>
             ))}
@@ -68,7 +70,7 @@ const EmployeeTable = () => {
       </div>
 
       {/* Pagination */}
-      <div className="flex items-center justify-center gap-1 mt-4">
+      {/* <div className="flex items-center justify-center gap-1 mt-4">
         <button className="p-1 rounded hover:bg-muted">
           <ChevronLeft className="w-4 h-4 text-muted-foreground" />
         </button>
@@ -88,7 +90,44 @@ const EmployeeTable = () => {
         <button className="p-1 rounded hover:bg-muted">
           <ChevronRight className="w-4 h-4 text-muted-foreground" />
         </button>
+      </div> */}
+
+      {/* Pagination */}
+      <div className="flex items-center justify-center gap-2 mt-4">
+
+        {/* Left arrow (disabled) */}
+        <button
+          className="w-10 h-10 flex items-center justify-center rounded-lg bg-gray-100 cursor-not-allowed"
+          disabled
+        >
+          <ChevronLeft className="w-5 h-5 text-gray-400" />
+        </button>
+
+        {/* Page numbers */}
+        {[1, 2, 3].map((page) => (
+          <button
+            key={page}
+            onClick={() => setCurrentPage(page)}
+            className={`w-10 h-10 flex items-center justify-center rounded-lg border text-base font-medium transition
+      ${currentPage === page
+                ? "bg-blue-700 text-white border-blue-700"
+                : "bg-white text-[#191D1D] border-gray-400 hover:bg-gray-50"
+              }
+    `}
+          >
+            {page}
+          </button>
+        ))}
+
+        {/* Right arrow */}
+        <button
+          className="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-400 bg-white hover:bg-gray-50"
+        >
+          <ChevronRight className="w-5 h-5 text-[#191D1D]" />
+        </button>
+
       </div>
+
     </div>
   );
 };
