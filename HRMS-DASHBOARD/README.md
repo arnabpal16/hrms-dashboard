@@ -2,7 +2,7 @@
 
 ## Project info
 
-**URL**: 
+**URL**: https://hrms-dashboard-taupe.vercel.app/
 
 ## How can You edit this code?
 
