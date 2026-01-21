@@ -14,7 +14,7 @@ const PayrollDepartmentChart = () => {
 
       {/* Chart */}
       <div className="flex items-center gap-12">
-        <div className="relative w-32 h-32">
+        <div className="relative w-56 h-56">
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>
               <Pie
