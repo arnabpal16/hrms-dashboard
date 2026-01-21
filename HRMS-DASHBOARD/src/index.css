@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    --background: 0 0% 96%;
+    --foreground: 220 15% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 20%;
+
+    --primary: 188 85% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 45 100% 55%;
+    --secondary-foreground: 220 15% 20%;
+
+    --muted: 220 10% 92%;
+    --muted-foreground: 220 10% 50%;
+
+    --accent: 188 85% 95%;
+    --accent-foreground: 188 85% 35%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 145 65% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 35 100% 50%;
+    --warning-foreground: 220 15% 20%;
+
+    --border: 220 10% 88%;
+    --input: 220 10% 88%;
+    --ring: 188 85% 45%;
+
+    --radius: 0.5rem;
+
+    /* Dashboard specific colors */
+    --sidebar-bg: 220 20% 18%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-hover: 220 20% 25%;
+    --sidebar-active: 188 85% 45%;
+
+    /* Chart colors */
+    --chart-blue: 188 85% 45%;
+    --chart-yellow: 45 100% 55%;
+    --chart-green: 145 65% 45%;
+    --chart-orange: 25 100% 55%;
+    --chart-purple: 270 70% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted));
+    border-radius: 3px;
+  }
+}
