@@ -52,7 +52,7 @@ const Dashboard = () => {
           <EmployeeTable />
 
           {/* Footer */}
-          <div className="text-center text-xs text-muted-foreground mt-6 py-4">
+          <div className="text-left text-xs text-muted-foreground mt-6 py-4">
             Copyright © 2025 Inbest.
           </div>
         </main>
