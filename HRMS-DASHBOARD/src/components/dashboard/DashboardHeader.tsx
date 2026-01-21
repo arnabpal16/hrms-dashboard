@@ -58,7 +58,11 @@ import navMail from "@/assets/navMail.png";
 import navRing from "@/assets/navRing.png";
 import profileAvatar from "@/assets/profile-avatar.png";
 
-const DashboardHeader = () => {
+interface DashboardHeaderProps {
+  onToggleSidebar: () => void;
+}
+
+const DashboardHeader = ({ onToggleSidebar }: DashboardHeaderProps) => {
   return (
     <header className="bg-white border-b border-gray-200 px-6 py-3">
 
@@ -67,7 +71,10 @@ const DashboardHeader = () => {
 
         {/* LEFT */}
         <div className="flex items-center gap-3">
-          <AlignJustify className="w-5 h-5 text-black cursor-pointer" />
+          <AlignJustify 
+            className="w-5 h-5 text-black cursor-pointer" 
+            onClick={onToggleSidebar}
+          />
           <span className="text-[18px] font-medium text-[#191D1D]">
             Dashboard
           </span>

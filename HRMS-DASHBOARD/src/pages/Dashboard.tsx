@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Sidebar from "@/components/dashboard/Sidebar";
 import DashboardHeader from "@/components/dashboard/DashboardHeader";
 import KPICards from "@/components/dashboard/KPICards";
@@ -10,15 +11,21 @@ import YearlyPayrollChart from "@/components/dashboard/YearlyPayrollChart";
 import EmployeeTable from "@/components/dashboard/EmployeeTable";
 
 const Dashboard = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen((prev) => !prev);
+  };
+
   return (
     <div className="flex min-h-screen bg-background">
       {/* Sidebar */}
-      <Sidebar />
+      <Sidebar isOpen={isSidebarOpen} />
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col">
         {/* Header */}
-        <DashboardHeader />
+        <DashboardHeader onToggleSidebar={toggleSidebar} />
 
         {/* Page Content */}
         <main className="flex-1 p-6 overflow-auto scrollbar-thin">

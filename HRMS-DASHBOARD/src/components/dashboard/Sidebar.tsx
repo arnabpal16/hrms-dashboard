@@ -21,10 +21,18 @@ import PayrollManagement from "@/assets/PayrollManagement.png";
 
 //type IconName = keyof typeof iconMap;
 
-const Sidebar = () => {
+interface SidebarProps {
+  isOpen?: boolean;
+}
+
+const Sidebar = ({ isOpen = true }: SidebarProps) => {
   return (
-    //<aside className="w-56 min-h-screen bg-[hsl(var(--sidebar-bg))] text-white flex flex-col">
-    <aside className="w-[222px] min-h-screen bg-white flex flex-col">
+    <div 
+      className={`overflow-hidden transition-all duration-300 ease-in-out ${
+        isOpen ? 'w-[222px]' : 'w-0'
+      }`}
+    >
+      <aside className="w-[222px] min-h-screen bg-white flex flex-col">
 
       {/* Logo Section */}
       <div className="p-4 border-b border-white/10  flex flex-col items-center">
@@ -109,7 +117,8 @@ const Sidebar = () => {
       <div className="p-4 text-xs text-white/50 text-center border-t border-white/10">
         Copyright © 2025 Inbest.
       </div>
-    </aside>
+      </aside>
+    </div>
   );
 };
 
