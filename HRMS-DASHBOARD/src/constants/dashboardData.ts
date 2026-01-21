@@ -1,5 +1,11 @@
 // Mock data for the HR Dashboard
 
+import DashboardIcon from "@/assets/Dashboard.png";
+import EmployeeOnboardingIcon from "@/assets/EmployeeOnboarding.png";
+import AttendanceOverviewIcon from "@/assets/AttendanceOverview.png";
+import AdvanceAdjustmentIcon from "@/assets/AdvanceAdjustment.png";
+import PayrollManagementIcon from "@/assets/PayrollManagement.png";
+
 export const KPI_DATA = {
   totalEmployees: {
     label: "Total Employees",
@@ -82,20 +88,36 @@ export const MONTHLY_PAYROLL = [
   { month: "Jun", value: 7.8 }
 ];
 
+// export const YEARLY_PAYROLL = [
+//   { month: "Jan", year2025: 45000, year2026: 52000 },
+//   { month: "Feb", year2025: 48000, year2026: 55000 },
+//   { month: "Mar", year2025: 42000, year2026: 58000 },
+//   { month: "Apr", year2025: 55000, year2026: 62000 },
+//   { month: "May", year2025: 52000, year2026: 68000 },
+//   { month: "Jun", year2025: 58000, year2026: 72000 },
+//   { month: "Jul", year2025: 62000, year2026: 75000 },
+//   { month: "Aug", year2025: 65000, year2026: 78000 },
+//   { month: "Sep", year2025: 68000, year2026: 82000 },
+//   { month: "Oct", year2025: 72000, year2026: 85000 },
+//   { month: "Nov", year2025: 75000, year2026: 88000 },
+//   { month: "Dec", year2025: 80000, year2026: 92000 }
+// ];
+
 export const YEARLY_PAYROLL = [
-  { month: "Jan", year2024: 45000, year2025: 52000 },
-  { month: "Feb", year2024: 48000, year2025: 55000 },
-  { month: "Mar", year2024: 42000, year2025: 58000 },
-  { month: "Apr", year2024: 55000, year2025: 62000 },
-  { month: "May", year2024: 52000, year2025: 68000 },
-  { month: "Jun", year2024: 58000, year2025: 72000 },
-  { month: "Jul", year2024: 62000, year2025: 75000 },
-  { month: "Aug", year2024: 65000, year2025: 78000 },
-  { month: "Sep", year2024: 68000, year2025: 82000 },
-  { month: "Oct", year2024: 72000, year2025: 85000 },
-  { month: "Nov", year2024: 75000, year2025: 88000 },
-  { month: "Dec", year2024: 80000, year2025: 92000 }
+  { month: "Jan", year2025: 180000, year2026: 220000 },
+  { month: "Feb", year2025: 260000, year2026: 300000 },
+  { month: "Mar", year2025: 210000, year2026: 280000 },
+  { month: "Apr", year2025: 320000, year2026: 400000 },
+  { month: "May", year2025: 290000, year2026: 380000 },
+  { month: "Jun", year2025: 260000, year2026: 420000 },
+  { month: "Jul", year2025: 350000, year2026: 520000 },
+  { month: "Aug", year2025: 420000, year2026: 680000 },
+  { month: "Sep", year2025: 360000, year2026: 560000 },
+  { month: "Oct", year2025: 400000, year2026: 650000 },
+  { month: "Nov", year2025: 450000, year2026: 720000 },
+  { month: "Dec", year2025: 550000, year2026: 950000 }
 ];
+
 
 export const EMPLOYEES = [
   {
@@ -155,9 +177,34 @@ export const EMPLOYEES = [
 ];
 
 export const SIDEBAR_MENU = [
-  { id: "dashboard", label: "Dashboard", icon: "LayoutDashboard", active: true },
-  { id: "onboarding", label: "Employee Onboarding", icon: "UserPlus", active: false },
-  { id: "attendance", label: "Attendance Overview", icon: "Calendar", active: false },
-  { id: "adjustment", label: "Advance Adjustment", icon: "Settings", active: false },
-  { id: "payroll", label: "Payroll Management", icon: "DollarSign", active: false }
+  {
+    id: "dashboard",
+    label: "Dashboard",
+    icon: DashboardIcon,
+    active: true
+  },
+  {
+    id: "onboarding",
+    label: "Employee Onboardig",
+    icon: EmployeeOnboardingIcon,
+    active: false
+  },
+  {
+    id: "attendance",
+    label: "Attendance Overview",
+    icon: AttendanceOverviewIcon,
+    active: false
+  },
+  {
+    id: "adjustment",
+    label: "Advance Adjustment",
+    icon: AdvanceAdjustmentIcon,
+    active: false
+  },
+  {
+    id: "payroll",
+    label: "Payroll Management",
+    icon: PayrollManagementIcon,
+    active: false
+  }
 ];

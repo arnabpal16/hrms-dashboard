@@ -46,10 +46,10 @@ import { KPI_DATA } from "@/constants/dashboardData";
 
 const KPICards = () => {
   const cards = [
-    { data: KPI_DATA.totalEmployees, isRate: false, color: "text-blue-600", borderColor: "ext-blue-600" },
-    { data: KPI_DATA.presentToday, isRate: false, color: "text-yellow-500", borderColor: "text-yellow-500" },
-    { data: KPI_DATA.absentToday, isRate: false, color: "text-sky-500", borderColor: "text-sky-500" },
-    { data: KPI_DATA.attendanceRate, isRate: true, color: "text-purple-600", borderColor: "text-purple-600" },
+    { data: KPI_DATA.totalEmployees, isRate: false, color: "text-blue-600", borderColor: "bg-blue-600" },
+    { data: KPI_DATA.presentToday, isRate: false, color: "text-yellow-500", borderColor: "bg-yellow-500" },
+    { data: KPI_DATA.absentToday, isRate: false, color: "text-sky-500", borderColor: "bg-sky-500" },
+    { data: KPI_DATA.attendanceRate, isRate: true, color: "text-purple-600", borderColor: "bg-purple-600" },
   ];
 
   return (
@@ -60,7 +60,7 @@ const KPICards = () => {
           className="relative bg-white rounded-lg border border-gray-200 p-4"
         >
           {/* RIGHT COLORED LINE */}
-          <div className="absolute right-0 top-0 h-full w-1 bg-orange-500 rounded-r-lg" />
+          <div className={`absolute right-0 top-0 h-full w-1 ${card.borderColor} rounded-r-lg`} />
 
           {/* HEADER */}
           <h3 className="text-sm font-semibold text-gray-800 mb-2">

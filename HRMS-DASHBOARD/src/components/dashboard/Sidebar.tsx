@@ -1,18 +1,25 @@
-import { LayoutDashboard, UserPlus, Calendar, Settings, DollarSign } from "lucide-react";
+// import { LayoutDashboard, UserPlus, Calendar, Settings, DollarSign } from "lucide-react";
 import inbestLogo from "@/assets/inbest-logo.png";
 import Rectangle from "@/assets/Rectangle.png"
 import { SIDEBAR_MENU } from "@/constants/dashboardData";
 
-// Icon mapping
-const iconMap = {
-  LayoutDashboard,
-  UserPlus,
-  Calendar,
-  Settings,
-  DollarSign
-};
+import Dashboard from "@/assets/Dashboard.png";
+import EmployeeOnboarding from "@/assets/EmployeeOnboarding.png";
+import AttendanceOverview from "@/assets/AttendanceOverview.png";
+import AdvanceAdjustment from "@/assets/AdvanceAdjustment.png";
+import PayrollManagement from "@/assets/PayrollManagement.png";
 
-type IconName = keyof typeof iconMap;
+
+// Icon mapping
+// const iconMap = {
+//   LayoutDashboard,
+//   UserPlus,
+//   Calendar,
+//   Settings,
+//   DollarSign
+// };
+
+//type IconName = keyof typeof iconMap;
 
 const Sidebar = () => {
   return (
@@ -49,7 +56,7 @@ const Sidebar = () => {
 
 
       {/* Navigation */}
-      <nav className="flex-1 p-3">
+      {/* <nav className="flex-1 p-3">
         <ul className="space-y-1">
           {SIDEBAR_MENU.map((item) => {
             const Icon = iconMap[item.icon as IconName];
@@ -69,7 +76,34 @@ const Sidebar = () => {
             );
           })}
         </ul>
+      </nav> */}
+
+      <nav className="flex-1 px-3 mt-4">
+        <ul className="space-y-1">
+          {SIDEBAR_MENU.map((item) => (
+            <li key={item.id}>
+              <button
+                className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition
+            ${item.active
+                    ? "bg-[#E9F0FF] text-[#1F4FDB]"
+                    : "text-[#4A4D56] hover:bg-[#F5F7FA]"
+                  }
+          `}
+              >
+                {/* IMAGE ICON */}
+                <img
+                  src={item.icon}
+                  alt={item.label}
+                  className="w-5 h-5 object-contain"
+                />
+
+                <span>{item.label}</span>
+              </button>
+            </li>
+          ))}
+        </ul>
       </nav>
+
 
       {/* Footer */}
       <div className="p-4 text-xs text-white/50 text-center border-t border-white/10">
